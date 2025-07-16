@@ -1,0 +1,106 @@
+.banner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.icon {
+  font-size: 100px;
+  color: #ffffff;
+  margin-top: 130px;
+  animation: glow-float 3s ease-in-out infinite;
+  text-shadow: 0 0 10px #ffffff66, 0 0 20px #ffffff33;
+  transition: transform 0.3s ease-in-out;
+}
+@keyframes glow-float {
+  0% {
+    transform: translateY(0);
+    text-shadow: 0 0 5px #ffffff66, 0 0 10px #ffffff33;
+  }
+  50% {
+    transform: translateY(-10px);
+    text-shadow: 0 0 15px #ffffff99, 0 0 30px #ffffff55;
+  }
+  100% {
+    transform: translateY(0);
+    text-shadow: 0 0 5px #ffffff66, 0 0 10px #ffffff33;
+  }
+}
+
+.banner h1 {
+  text-align: center;
+  width: 60%;
+  font-size: 30px;
+  font-weight: 600;
+}
+.banner h1 span {
+  background: linear-gradient(270deg, #6e8efb, #a777e3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.banner p {
+  text-align: center;
+  width: 40%;
+  font-size: 16px;
+  line-height: 30px;
+}
+.banner-btn {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+.btn-contact {
+  padding: 15px 20px;
+  border-radius: 50px;
+  background: linear-gradient(267deg, #6e8efb, #a777e3);
+  font-size: 20px;
+  transition: 0.5s ease-in-out;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.btn-contact a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-contact:hover {
+  background: linear-gradient(135deg, #a777e3, #6e8efb);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.btn-resume {
+ padding: 15px 20px;
+  border-radius: 50px;
+  font-size: 20px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.btn-resume a {
+  text-decoration: none;
+  color: #fff;
+}
+.btn-resume:hover {
+  border: 2px solid #6e8efb;
+  transform: translateY(-3px) scale(1.04);
+}
+@media screen and (max-width: 768px) {
+  .banner-btn {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .banner h1,
+  .banner p {
+    width: 90%;
+  }
+}

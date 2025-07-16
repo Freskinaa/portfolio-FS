@@ -1,0 +1,89 @@
+.education-section {
+  padding: 40px 20px;
+  background-color: #161513;
+  color: white;
+  text-align: center;
+}
+
+.education-section h2 {
+  color: #8ab4f8;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.edu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 320px;
+}
+
+.edu-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #8ab4f8, #b388eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.edu-card {
+  background: linear-gradient(135deg, #1e1e24, #2a2a30);
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #eeeeee;
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85);
+}
+
+.edu-date {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #888888;
+}
+
+.edu-institution,
+.edu-faculty,
+.edu-department,
+.edu-course {
+  font-weight: 600;
+  font-size: 16px;
+  color: #dddddd;
+  margin-bottom: 6px;
+}
+
+.edu-department {
+  font-size: 14px;
+  font-style: italic;
+  color: #999999;
+}
+
+.edu-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #cccccc;
+}
+@media screen and (max-width: 768px) {
+  .edu-wrapper {
+    align-items: center;
+    text-align: center;
+  }
+}
