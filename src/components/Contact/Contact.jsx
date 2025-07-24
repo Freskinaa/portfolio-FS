@@ -1,10 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Contact.css';
 
 const Contact = () => {
   const form = useRef();
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState({ message: '', type: '' });
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -15,21 +21,21 @@ const Contact = () => {
       form.current,
       'aQbUOPW1s2gJc6p3s'
     )
-      .then(() => {
-        setStatus('Message sent successfully!');
-        e.target.reset();
-        setTimeout(() => setStatus(''), 4000); 
-      }, () => {
-        setStatus('Failed to send the message, please try again.');
-        setTimeout(() => setStatus(''), 4000); 
-      });
+    .then(() => {
+      setStatus({ message: 'Message sent successfully!', type: 'success' });
+      e.target.reset();
+      setTimeout(() => setStatus({ message: '', type: '' }), 4000);
+    }, () => {
+      setStatus({ message: 'Failed to send the message, please try again.', type: 'error' });
+      setTimeout(() => setStatus({ message: '', type: '' }), 4000);
+    });
   };
 
   return (
-    <div className="contact-container" id="contact">
-      <h2>Contact Me</h2>
+    <div className="contact-container" id="contact" data-aos="fade-up">
+      <h2 data-aos="fade-down">Contact Me</h2>
 
-      <form ref={form} onSubmit={sendEmail} className="contact-form">
+      <form ref={form} onSubmit={sendEmail} className="contact-form" data-aos="fade-left">
         <label>Name</label>
         <input type="text" name="user_name" required />
 
@@ -42,7 +48,11 @@ const Contact = () => {
         <button type="submit">Send</button>
       </form>
 
-      {status && <p className="status-message">{status}</p>}
+      {status.message && (
+        <p className={`status-message ${status.type}`} data-aos="fade-up">
+          {status.message}
+        </p>
+      )}
     </div>
   );
 };

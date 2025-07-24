@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <a href="#" onClick={closeMenu}>
+      <a href="/" onClick={closeMenu}>
         <img src={logo} alt="logo" className="logo" />
       </a>
       <div className="hamburger" onClick={toggleMenu}>
@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className={isOpen ? "bar open" : "bar"}></div>
       </div>
       <ul className={isOpen ? "nav-menu open" : "nav-menu"}>
-        <li><a href="#" onClick={closeMenu}>Home</a></li>
+        <li><a href="/" onClick={closeMenu}>Home</a></li>
         <li><a href="#about" onClick={closeMenu}>About</a></li>
         <li><a href="#education" onClick={closeMenu}>Education</a></li>
         <li><a href="#portfolio" onClick={closeMenu}>Portfolio</a></li>

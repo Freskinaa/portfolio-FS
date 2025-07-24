@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Portfolio.css';
 import projects from '../../data/projects';
 
 const Portfolio = () => {
   const [visibleCount, setVisibleCount] = useState(6);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   const handleViewMore = () => {
     if (visibleCount >= projects.length) {
@@ -16,8 +22,8 @@ const Portfolio = () => {
   const isShowingAll = visibleCount >= projects.length;
 
   return (
-    <div className="projects" id="portfolio">
-      <div className="project_title">
+    <div className="projects" id="portfolio" data-aos="fade-up">
+      <div className="project_title" data-aos="fade-down" data-aos-delay="100">
         <h1>My Projects</h1>
       </div>
 
@@ -29,6 +35,8 @@ const Portfolio = () => {
             className="project-card"
             target="_blank"
             rel="noopener noreferrer"
+            data-aos="fade-up"
+            data-aos-delay={index * 100} // efekt valë për secilën kartë
           >
             <div className="project-card-img-wrapper">
               <img src={project.image} alt={project.title} />
@@ -42,7 +50,11 @@ const Portfolio = () => {
       </div>
 
       {projects.length > 6 && (
-        <div className="view-more-wrapper">
+        <div
+          className="view-more-wrapper"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           <button onClick={handleViewMore} className="view-more-button">
             {isShowingAll ? 'View Less' : 'View More'}
           </button>

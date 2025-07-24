@@ -76,6 +76,15 @@
   color: #7fbcff;
 }
 
+.status-message.success {
+  color: #107535; 
+}
+
+.status-message.error {
+  color: #ff4c4c; 
+}
+
+
 @media screen and (max-width: 768px) {
   .contact-container {
     padding: 40px 15px;
